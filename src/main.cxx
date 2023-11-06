@@ -10,12 +10,17 @@ void usage()
 void write_config(std::ofstream& file, const std::string path)
 {
 	file.open(path, std::ios::out);
+	if (!file.is_open())
+	{
+		std::cerr << "File not found!\n";
+		exit(1);
+	}
 	file << "hello, world\n";
 }
 
 int main(int argc, char* argv[])
 {
-	if (argc < 2)
+	if (argc != 2)
 	{
 		usage();
 	}	
