@@ -51,18 +51,18 @@
     exit
     ```
 ## Порядок вызова программы
-Usage: 
-normal usage:
-        tasm-makeconfig <output path> <binary path> <binary name>
-                output path     - path/to/dir where config will be created
-                binary path     - path/to/dir where binary is located
-                binary name     - name of binary file
+    Usage: 
+    normal usage:
+            tasm-makeconfig <output path> <binary path> <binary name>
+                    output path     - path/to/dir where config will be created
+                    binary path     - path/to/dir where binary is located
+                    binary name     - name of binary file
 
---build option:
-        tasm-makeconfig --build <output path> <tasm path> <source path> <source name>
-                output path     - path/to/dir where config will be created
-                tasm path       - path/to/dir where tasm binutils is located
-                source path     - path/to/dir where asm source file is located
-                binary output path      - path/to/dir where binary will be created
-                source name     - name of asm source file
+    --build option:
+            tasm-makeconfig --build <output path> <tasm path> <source path> <source name>
+                    output path     - path/to/dir where config will be created
+                    tasm path       - path/to/dir where tasm binutils is located
+                    source path     - path/to/dir where asm source file is located
+                    binary output path      - path/to/dir where binary will be created
+                    source name     - name of asm source file
 
