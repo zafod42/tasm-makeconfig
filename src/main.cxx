@@ -19,14 +19,15 @@ void write_config(
 		const std::string filename
 		)
 {
-	file.open(path, std::ios::out);
+	std::string path_to_file = path + "/" + filename;
+	file.open(path_to_file, std::ios::out);
 	if (!file.is_open())
 	{
 		std::cerr << "File not found!\n";
 		exit(1);
 	}
 	file << "[autoexec]\n";
-	file << "@echo off";
+	file << "@echo off\n";
 	file << "mount c: " << tasmPath << '\n';
 	file << "mount d: " << sourcePath << '\n';
 	file << "path=z:\\;c:\\\n";
@@ -42,6 +43,7 @@ int main(int argc, char* argv[])
 	if (argc != 5)
 	{
 		usage();
+		exit(1);
 	}	
 	std::ofstream config;
 	//std::string path = "/home/zafod/Documents/DOS_ASM/tasm-mkconfig/config.conf";
@@ -49,7 +51,7 @@ int main(int argc, char* argv[])
 	std::string tasmPath = argv[2];
 	std::string sourcePath = argv[3];
 	std::string filename = argv[4];
-	write_config(config, path);
+	write_config(config, path, tasmPath, sourcePath, filename);
 	std::cout << "hello, world!\n";
 	return 0;
 }
