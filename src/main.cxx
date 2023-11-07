@@ -28,8 +28,8 @@ void write_config(
 	}
 	file << "[autoexec]\n";
 	file << "@echo off\n";
-	file << "mount c: " << tasmPath << '\n';
-	file << "mount d: " << sourcePath << '\n';
+	file << "mount c: \"" << tasmPath << "\"\n";
+	file << "mount d: \"" << sourcePath << "\"\n";
 	file << "path=z:\\;c:\\\n";
 	file << "d:\n";
 	file << "cls\n";
