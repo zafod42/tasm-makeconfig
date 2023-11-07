@@ -4,4 +4,3 @@ project(tasm-makeconfig)
 
 add_subdirectory(src)
 
-
