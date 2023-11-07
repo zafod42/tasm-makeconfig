@@ -3,9 +3,9 @@
 #include <string>
 #include <algorithm>
 
-
-bool debug = true;
-bool obscurantism = true;
+bool pause = false;
+bool debug = false;
+bool obscurantism = false;
 
 void usage()
 {
@@ -46,8 +46,8 @@ void write_builder_config(
 	file << "mount f: \"" << outputPath << "\"\n";
 	file << "path=z:\\;c:\\\n";
 	file << "f:\n";
-	file << "tasm d:\\" << filename << ".asm\n";
-	file << "tlink " << filename << ".obj\n";
+	file << "tasm d:\\" << filename << ".asm > f:\\build.log\n";
+	file << "tlink " << filename << ".obj > f:\\link.log\n";
 	if (!debug)
 	{
 		file << "cls\n";
@@ -82,8 +82,13 @@ void write_runner_config(
 			file << "echo .\n";
 		}
 	}
-	file << "pause\n";
-	file << "exit\n";
+	if (!debug){
+		if (pause)
+		{
+			file << "pause\n";
+		}
+		file << "exit\n";
+	}
 }
 
 bool cmdOptionExists(char** begin, char** end, const std::string& option)
