@@ -1,1 +1,1 @@
-add_executable(tasm-makeconfig main.cxx)
+add_executable(tasm-makeconfig main.cpp)
